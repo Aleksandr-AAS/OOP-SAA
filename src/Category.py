@@ -26,3 +26,11 @@ class Category:
         for prod in self.__products:
             prod_str += f"{prod.name},{prod.price} руб. Остаток: {prod.quantity} шт.\n"
         return prod_str
+
+    def __str__(self):
+        """Возвращает строковое представление категории с общим количеством товаров."""
+        total_quantity = sum(product.quantity for product in self.__products)
+        return f"{self.description}, {total_quantity} шт."
+
+#     """Возвращает строковое представление категории."""
+#     return f"{self.description}, {len(self.__products)} шт."
