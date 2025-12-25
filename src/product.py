@@ -16,6 +16,21 @@ class Product:
         """Смотрим объект по ссылке"""
         return f"{self.name}, {self.description}"
 
+    def __str__(self):
+        """Возвращает строковое представление товара."""
+        return f"{self.description}, {self.price} руб. Остаток: {self.quantity} шт."
+
+
+    def __add__(self, other):
+        """Магический метод сложения.
+        Возвращает сумму произведений цены на количество у двух объектов.
+        """
+        if not isinstance(other, Product):
+            raise TypeError("Можно складывать только объекты класса Product")
+
+        return (self.price * self.quantity) + (other.price * other.quantity)
+
+
     @property
     def price(self):
         """Геттер для получения цены"""
