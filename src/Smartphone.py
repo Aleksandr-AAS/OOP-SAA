@@ -10,7 +10,7 @@ class Smartphone(Product):
         description,
         price,
         quantity,
-        efficiency: str,
+        efficiency: float,
         model: str,
         memory: int,
         color: str,
