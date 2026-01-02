@@ -1,4 +1,5 @@
 from src.product import Product
+from src.Smartphone import Smartphone
 
 
 def test_product_creation():
@@ -19,3 +20,19 @@ def test_new_product():
     assert product1.name == "Телефон"
     assert product1.price == 30000
     assert isinstance(product1, Product)
+
+
+def test_product_addition():
+    """Тест сложения товаров"""
+    # Одинаковые классы
+    p1 = Product("Товар1", "Описание", 100, 2)
+    p2 = Product("Товар2", "Описание", 200, 3)
+    assert p1 + p2 == 800  # 100*2 + 200*3 = 800
+
+    # Разные классы - должна быть ошибка
+    s = Smartphone("Смартфон", "Описание", 500, 1, 95.5, "Model", 256, "Black")
+    try:
+        p1 + s
+        assert False, "Ожидалась ошибка для разных классов"
+    except TypeError:
+        pass

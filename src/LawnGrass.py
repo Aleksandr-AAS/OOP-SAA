@@ -21,13 +21,3 @@ class LawnGrass(Product):
         self.country = country
         self.germination_period = germination_period
         self.color = color
-
-    # def __add__(self, other):
-    #     """
-    #     Переопределяем метод сложения для газонной травы.
-    #     Можно складывать только с объектами LawnGrass.
-    #     """
-    #     if not isinstance(other, LawnGrass):
-    #         raise TypeError("Можно складывать только объекты класса LawnGrass")
-    #
-    #     return (self.price * self.quantity) + (other.price * other.quantity)
