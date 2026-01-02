@@ -18,11 +18,6 @@ class Category:
         Category.category_count += 1
         Category.product_count += len(products) if products else 0
 
-    # def add_product(self, product):
-    #     """Добавляем количество по категориям"""
-    #     self.__products.append(product)
-    #     Category.product_count += 1
-
     def add_product(self, product):
         """
         Добавляет продукт в категорию.
@@ -54,7 +49,3 @@ class Category:
         """Возвращает строковое представление категории с общим количеством товаров."""
         total_quantity = sum(product.quantity for product in self.__products)
         return f"{self.description}, {total_quantity} шт."
-
-
-#     """Возвращает строковое представление категории."""
-#     return f"{self.description}, {len(self.__products)} шт."

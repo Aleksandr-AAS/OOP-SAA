@@ -1,13 +1,9 @@
 from src.BaseProduct import BaseProduct
+from src.PrintCreationMixin import PrintCreationMixin
 
 
-class Product(BaseProduct):
+class Product(PrintCreationMixin, BaseProduct):
     """Класс для представления товара."""
-
-    # name: str
-    # description: str
-    # price: float
-    # quantity: int
 
     def __init__(self, name, description, price, quantity):
         self.name = name
