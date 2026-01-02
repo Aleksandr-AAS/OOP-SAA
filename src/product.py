@@ -1,10 +1,13 @@
-class Product:
+from src.BaseProduct import BaseProduct
+
+
+class Product(BaseProduct):
     """Класс для представления товара."""
 
-    name: str
-    description: str
-    price: float
-    quantity: int
+    # name: str
+    # description: str
+    # price: float
+    # quantity: int
 
     def __init__(self, name, description, price, quantity):
         self.name = name
@@ -32,15 +35,6 @@ class Product:
             )
 
         return (self.price * self.quantity) + (other.price * other.quantity)
-
-    # def __add__(self, other):
-    #     """Магический метод сложения.
-    #     Возвращает сумму произведений цены на количество у двух объектов.
-    #     """
-    #     if not isinstance(other, Product):
-    #         raise TypeError("Можно складывать только объекты класса Product")
-    #
-    #     return (self.price * self.quantity) + (other.price * other.quantity)
 
     @property
     def price(self):
