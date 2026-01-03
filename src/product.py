@@ -6,6 +6,9 @@ class Product(PrintCreationMixin, BaseProduct):
     """Класс для представления товара."""
 
     def __init__(self, name, description, price, quantity):
+        # Проверяем количество перед созданием объекта
+        if quantity == 0:
+            raise ValueError("Товар с нулевым количеством не может быть добавлен.")
         self.name = name
         self.description = description
         self.__price = price
