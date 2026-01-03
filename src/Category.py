@@ -49,3 +49,21 @@ class Category:
         """Возвращает строковое представление категории с общим количеством товаров."""
         total_quantity = sum(product.quantity for product in self.__products)
         return f"{self.description}, {total_quantity} шт."
+
+    def middle_price(self):
+        """
+        Рассчитывает средний ценник всех товаров в категории.
+        Если в категории нет товаров или сумма делится на ноль, возвращает 0.
+        """
+        try:
+            # Суммируем все цены товаров
+            total_price = sum(product.price for product in self.__products)
+            # Получаем количество товаров
+            total_count = len(self.__products)
+            # Вычисляем среднюю цену
+            average = total_price / total_count
+            return round(average, 2)
+
+        except ZeroDivisionError:
+            # Обрабатываем случай, когда в категории нет товаров
+            return 0

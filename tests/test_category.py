@@ -26,3 +26,13 @@ def test_none_products_list():
     """Тест с явным указанием None в products"""
     category = Category("Категория", "Описание", None)
     assert category.products == ""
+
+
+def test_middle_price_empty_category(empty_category):
+    """Тест расчета средней цены для пустой категории"""
+    assert empty_category.middle_price() == 0
+
+
+def test_middle_price_with_products(category_with_products):
+    """Тест расчета средней цены для категории с товарами"""
+    assert category_with_products.middle_price() == 53333.33

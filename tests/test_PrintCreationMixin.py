@@ -7,6 +7,7 @@ def test_mixin():
             super().__init__(a, b)
 
     import io, sys
+
     out = io.StringIO()
     sys.stdout = out
     Test(1, 2)
